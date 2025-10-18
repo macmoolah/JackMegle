@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jackmegle — Choose</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="card container">
+    <h1>Jackmegle</h1>
+    <p class="muted">Pick a mode and set a few preferences.</p>
+
+    <label>
+      Display name
+      <input id="name" placeholder="Your name"/>
+    </label>
+
+    <label>
+      Interests (comma separated)
+      <input id="interests" placeholder="music, coding, cats"/>
+    </label>
+
+    <div class="choices">
+      <a id="videoLink" class="btn" href="/video.html">Video chat</a>
+      <a id="textLink" class="btn" href="/text.html">Text-only</a>
+    </div>
+  </main>
+
+  <script>
+    // persist quick prefs to sessionStorage to be picked up by pages
+    document.getElementById('videoLink').addEventListener('click', () => {
+      sessionStorage.setItem('jm:name', document.getElementById('name').value || '');
+      sessionStorage.setItem('jm:interests', document.getElementById('interests').value || '');
+    });
+    document.getElementById('textLink').addEventListener('click', () => {
+      sessionStorage.setItem('jm:name', document.getElementById('name').value || '');
+      sessionStorage.setItem('jm:interests', document.getElementById('interests').value || '');
+    });
+    // restore if available
+    const n = sessionStorage.getItem('jm:name'); if (n) document.getElementById('name').value = n;
+    const i = sessionStorage.getItem('jm:interests'); if (i) document.getElementById('interests').value = i;
+  </script>
+</body>
+</html>

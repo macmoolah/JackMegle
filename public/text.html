@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jackmegle — Text</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <main class="card container">
+    <h1>Jackmegle — Text chat</h1>
+    <p class="muted">Lightweight text-only pairing.</p>
+    <div id="status" class="status neutral">Not connected</div>
+    <div id="messages" class="messages" style="height:320px; overflow:auto; margin-bottom:12px"></div>
+    <form id="msgForm" class="chat-form">
+      <input id="msgInput" placeholder="Say hi..." autocomplete="off"/>
+      <button class="btn" type="submit">Send</button>
+      <button type="button" id="nextBtn" class="btn">Next</button>
+      <a class="btn" href="/">Back</a>
+    </form>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/text.js"></script>
+</body>
+</html>

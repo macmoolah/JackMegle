@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jackmegle — Video</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1 class="logo">Jackmegle</h1>
+      <p class="tagline">Video chat</p>
+    </header>
+
+    <div id="status" class="status neutral">Not connected</div>
+
+    <div class="videos">
+      <div class="video-card">
+        <video id="localVideo" autoplay muted playsinline></video>
+        <span class="label">You</span>
+        <div id="statsOverlay"></div>
+      </div>
+      <div class="video-card">
+        <video id="remoteVideo" autoplay playsinline></video>
+        <span class="label">Stranger</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn" class="btn glow">Start</button>
+      <button id="nextBtn" class="btn" disabled>Next</button>
+      <button id="hangupBtn" class="btn danger" disabled>Hang Up</button>
+      <button id="muteBtn" class="btn" disabled>Mute</button>
+      <button id="camBtn" class="btn" disabled>Camera On</button>
+      <a class="btn" href="/">Back</a>
+    </div>
+
+    <div class="chat-wrap">
+      <form id="msgForm" class="chat-form">
+        <input type="text" id="msgInput" placeholder="Type a message..." autocomplete="off" />
+        <button type="submit" class="btn">Send</button>
+      </form>
+      <div id="messages" class="messages"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>⚡ Jackmegle — Video</p>
+  </footer>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/video.js"></script>
+</body>
+</html>
